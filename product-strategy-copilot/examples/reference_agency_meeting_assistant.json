@@ -1,0 +1,355 @@
+{
+  "request": {
+    "concept": "An AI assistant for boutique agencies that turns messy meeting notes into client-ready summaries, follow-up emails, and internal task plans.",
+    "additional_context": "Optimize for time-to-value within one session."
+  },
+  "response": {
+    "request_id": "sample_agency_meeting_assistant",
+    "generated_at": "2026-04-02T12:00:00Z",
+    "input": {
+      "concept": "An AI assistant for boutique agencies that turns messy meeting notes into client-ready summaries, follow-up emails, and internal task plans.",
+      "additional_context": "Optimize for time-to-value within one session."
+    },
+    "strategy_output": {
+      "product_brief": {
+        "product_name": "SignalBrief",
+        "category": "AI assistant",
+        "target_user": "Small agencies that need to move faster without growing headcount",
+        "core_problem": "Account teams lose time converting rough meeting notes into aligned client follow-up and internal delivery work.",
+        "solution_summary": "SignalBrief converts messy notes into structured summaries, follow-up drafts, and internal action plans that teams can review before sending.",
+        "primary_platform": "Web app",
+        "monetization_model": "Per-seat subscription with team plans",
+        "differentiator": "It is optimized for agency handoff workflows instead of acting like a general-purpose note summarizer."
+      },
+      "user_journey_loops": [
+        {
+          "name": "Capture meeting context",
+          "objective": "Turn raw notes into a usable draft without cleanup-heavy onboarding.",
+          "user_steps": [
+            "Paste or upload meeting notes",
+            "Select a client and desired output type",
+            "Generate a structured first draft"
+          ],
+          "success_signal": "The first draft is usable enough that the team edits instead of rewriting from scratch.",
+          "time_to_value": "Under 5 minutes"
+        },
+        {
+          "name": "Approve the follow-up plan",
+          "objective": "Review and refine the draft into an internal or client-ready deliverable.",
+          "user_steps": [
+            "Review extracted action items",
+            "Adjust owners, due dates, and wording",
+            "Export or copy the final version"
+          ],
+          "success_signal": "The user sends or saves a final plan in the same session.",
+          "time_to_value": "5-15 minutes"
+        },
+        {
+          "name": "Reuse successful templates",
+          "objective": "Encourage repeat usage across multiple client accounts.",
+          "user_steps": [
+            "Save a successful output pattern",
+            "Reuse the same structure on the next meeting",
+            "Compare edits across accounts"
+          ],
+          "success_signal": "Teams come back for another meeting workflow within the same week.",
+          "time_to_value": "Within 7 days"
+        }
+      ],
+      "monetization_risk_notes": [
+        {
+          "category": "monetization",
+          "priority": "medium",
+          "title": "Price against visible time saved",
+          "note": "Agencies will pay when the product clearly reduces coordination time across client follow-up work.",
+          "mitigation": "Tie paid plans to seats, saved templates, and shared workflows rather than raw AI usage."
+        },
+        {
+          "category": "delivery",
+          "priority": "high",
+          "title": "Scope creep is the main execution risk",
+          "note": "Calendar sync, CRM sync, and PM integrations could overwhelm the first release.",
+          "mitigation": "Start with one copy-paste workflow and a single export target."
+        },
+        {
+          "category": "retention",
+          "priority": "medium",
+          "title": "Retention depends on repeat meetings",
+          "note": "The product is less sticky if it is useful only for one-off note cleanup.",
+          "mitigation": "Focus early UX on recurring client-account workflows and reusable templates."
+        },
+        {
+          "category": "go_to_market",
+          "priority": "medium",
+          "title": "Positioning must be sharper than 'AI assistant'",
+          "note": "Agencies already see many generic note tools and need a workflow-specific reason to switch.",
+          "mitigation": "Lead with agency delivery speed, client follow-up clarity, and reduced admin overhead."
+        }
+      ],
+      "task_list": [
+        {
+          "id": 1,
+          "title": "Define the single agency workflow the product must solve first",
+          "priority": "high",
+          "rationale": "A focused workflow makes prompt design, positioning, and validation much easier.",
+          "estimated_hours": 6.0,
+          "dependencies": []
+        },
+        {
+          "id": 2,
+          "title": "Write the structured output schema and critique rubric",
+          "priority": "high",
+          "rationale": "The schema is the contract between prompting, evaluation, and downstream UI behavior.",
+          "estimated_hours": 8.0,
+          "dependencies": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Build a vertical slice from note input to editable JSON",
+          "priority": "high",
+          "rationale": "The product needs one complete path before integrations or collaboration features matter.",
+          "estimated_hours": 20.0,
+          "dependencies": [
+            2
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Pilot the workflow with five agencies",
+          "priority": "medium",
+          "rationale": "The team needs evidence that outputs are decision-ready for real client work.",
+          "estimated_hours": 10.0,
+          "dependencies": [
+            3
+          ]
+        },
+        {
+          "id": 5,
+          "title": "Decide pricing and packaging for the first paid tier",
+          "priority": "medium",
+          "rationale": "Business model decisions affect saved history, template sharing, and seat management.",
+          "estimated_hours": 6.0,
+          "dependencies": [
+            3
+          ]
+        }
+      ],
+      "follow_up_questions": [
+        {
+          "question": "Is the first buyer more likely to be the agency owner, ops lead, or account manager?",
+          "category": "user",
+          "reason": "This changes both packaging and onboarding design."
+        },
+        {
+          "question": "Which output has to feel almost instant for the product to seem worth trying?",
+          "category": "workflow",
+          "reason": "The answer clarifies the most important first-session quality bar."
+        },
+        {
+          "question": "Will early adopters expect task exports before they are willing to adopt the workflow?",
+          "category": "scope",
+          "reason": "This affects whether integrations belong in the MVP."
+        }
+      ]
+    },
+    "critic_review": {
+      "ready_for_delivery": true,
+      "completeness_score": 0.93,
+      "clarity_score": 0.9,
+      "consistency_score": 0.91,
+      "safety_notes": [],
+      "issues": [],
+      "recommended_revisions": [
+        "Validate whether agency owners or account leads are the first buyers before expanding collaboration features."
+      ]
+    },
+    "evaluation": {
+      "completeness_score": 0.95,
+      "consistency_score": 0.92,
+      "latency_ms": 118,
+      "estimated_cost_usd": 0.000842,
+      "total_tokens": 746,
+      "quality_score": 0.928
+    },
+    "agent_runs": [
+      {
+        "agent_name": "planner",
+        "agent_version": "1.0.0",
+        "prompt_name": "planner_strategy",
+        "prompt_version": "2026-04-02",
+        "model_provider": "mock",
+        "model_name": "mock-heuristic-v1",
+        "latency_ms": 69,
+        "prompt_tokens": 201,
+        "completion_tokens": 237,
+        "total_tokens": 438,
+        "estimated_cost_usd": 0.000492,
+        "retries": 0
+      },
+      {
+        "agent_name": "critic",
+        "agent_version": "1.0.0",
+        "prompt_name": "critic_strategy_review",
+        "prompt_version": "2026-04-02",
+        "model_provider": "mock",
+        "model_name": "mock-heuristic-v1",
+        "latency_ms": 41,
+        "prompt_tokens": 147,
+        "completion_tokens": 161,
+        "total_tokens": 308,
+        "estimated_cost_usd": 0.00035,
+        "retries": 0
+      }
+    ],
+    "prompt_versions": {
+      "planner_strategy": "2026-04-02",
+      "critic_strategy_review": "2026-04-02"
+    },
+    "editable_json": {
+      "product_brief": {
+        "product_name": "SignalBrief",
+        "category": "AI assistant",
+        "target_user": "Small agencies that need to move faster without growing headcount",
+        "core_problem": "Account teams lose time converting rough meeting notes into aligned client follow-up and internal delivery work.",
+        "solution_summary": "SignalBrief converts messy notes into structured summaries, follow-up drafts, and internal action plans that teams can review before sending.",
+        "primary_platform": "Web app",
+        "monetization_model": "Per-seat subscription with team plans",
+        "differentiator": "It is optimized for agency handoff workflows instead of acting like a general-purpose note summarizer."
+      },
+      "user_journey_loops": [
+        {
+          "name": "Capture meeting context",
+          "objective": "Turn raw notes into a usable draft without cleanup-heavy onboarding.",
+          "user_steps": [
+            "Paste or upload meeting notes",
+            "Select a client and desired output type",
+            "Generate a structured first draft"
+          ],
+          "success_signal": "The first draft is usable enough that the team edits instead of rewriting from scratch.",
+          "time_to_value": "Under 5 minutes"
+        },
+        {
+          "name": "Approve the follow-up plan",
+          "objective": "Review and refine the draft into an internal or client-ready deliverable.",
+          "user_steps": [
+            "Review extracted action items",
+            "Adjust owners, due dates, and wording",
+            "Export or copy the final version"
+          ],
+          "success_signal": "The user sends or saves a final plan in the same session.",
+          "time_to_value": "5-15 minutes"
+        },
+        {
+          "name": "Reuse successful templates",
+          "objective": "Encourage repeat usage across multiple client accounts.",
+          "user_steps": [
+            "Save a successful output pattern",
+            "Reuse the same structure on the next meeting",
+            "Compare edits across accounts"
+          ],
+          "success_signal": "Teams come back for another meeting workflow within the same week.",
+          "time_to_value": "Within 7 days"
+        }
+      ],
+      "monetization_risk_notes": [
+        {
+          "category": "monetization",
+          "priority": "medium",
+          "title": "Price against visible time saved",
+          "note": "Agencies will pay when the product clearly reduces coordination time across client follow-up work.",
+          "mitigation": "Tie paid plans to seats, saved templates, and shared workflows rather than raw AI usage."
+        },
+        {
+          "category": "delivery",
+          "priority": "high",
+          "title": "Scope creep is the main execution risk",
+          "note": "Calendar sync, CRM sync, and PM integrations could overwhelm the first release.",
+          "mitigation": "Start with one copy-paste workflow and a single export target."
+        },
+        {
+          "category": "retention",
+          "priority": "medium",
+          "title": "Retention depends on repeat meetings",
+          "note": "The product is less sticky if it is useful only for one-off note cleanup.",
+          "mitigation": "Focus early UX on recurring client-account workflows and reusable templates."
+        },
+        {
+          "category": "go_to_market",
+          "priority": "medium",
+          "title": "Positioning must be sharper than 'AI assistant'",
+          "note": "Agencies already see many generic note tools and need a workflow-specific reason to switch.",
+          "mitigation": "Lead with agency delivery speed, client follow-up clarity, and reduced admin overhead."
+        }
+      ],
+      "task_list": [
+        {
+          "id": 1,
+          "title": "Define the single agency workflow the product must solve first",
+          "priority": "high",
+          "rationale": "A focused workflow makes prompt design, positioning, and validation much easier.",
+          "estimated_hours": 6.0,
+          "dependencies": []
+        },
+        {
+          "id": 2,
+          "title": "Write the structured output schema and critique rubric",
+          "priority": "high",
+          "rationale": "The schema is the contract between prompting, evaluation, and downstream UI behavior.",
+          "estimated_hours": 8.0,
+          "dependencies": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Build a vertical slice from note input to editable JSON",
+          "priority": "high",
+          "rationale": "The product needs one complete path before integrations or collaboration features matter.",
+          "estimated_hours": 20.0,
+          "dependencies": [
+            2
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Pilot the workflow with five agencies",
+          "priority": "medium",
+          "rationale": "The team needs evidence that outputs are decision-ready for real client work.",
+          "estimated_hours": 10.0,
+          "dependencies": [
+            3
+          ]
+        },
+        {
+          "id": 5,
+          "title": "Decide pricing and packaging for the first paid tier",
+          "priority": "medium",
+          "rationale": "Business model decisions affect saved history, template sharing, and seat management.",
+          "estimated_hours": 6.0,
+          "dependencies": [
+            3
+          ]
+        }
+      ],
+      "follow_up_questions": [
+        {
+          "question": "Is the first buyer more likely to be the agency owner, ops lead, or account manager?",
+          "category": "user",
+          "reason": "This changes both packaging and onboarding design."
+        },
+        {
+          "question": "Which output has to feel almost instant for the product to seem worth trying?",
+          "category": "workflow",
+          "reason": "The answer clarifies the most important first-session quality bar."
+        },
+        {
+          "question": "Will early adopters expect task exports before they are willing to adopt the workflow?",
+          "category": "scope",
+          "reason": "This affects whether integrations belong in the MVP."
+        }
+      ]
+    }
+  }
+}

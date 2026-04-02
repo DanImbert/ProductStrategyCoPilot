@@ -1,0 +1,361 @@
+{
+  "request": {
+    "concept": "A marketplace that helps homeowners compare vetted repair professionals, manage quotes, and convert decisions into booked jobs faster.",
+    "additional_context": "Launch in one city first and emphasize trust."
+  },
+  "response": {
+    "request_id": "sample_local_repair_marketplace",
+    "generated_at": "2026-04-02T12:03:00Z",
+    "input": {
+      "concept": "A marketplace that helps homeowners compare vetted repair professionals, manage quotes, and convert decisions into booked jobs faster.",
+      "additional_context": "Launch in one city first and emphasize trust."
+    },
+    "strategy_output": {
+      "product_brief": {
+        "product_name": "Fixlane",
+        "category": "Marketplace",
+        "target_user": "Service buyers and local operators coordinating offline work",
+        "core_problem": "Homeowners struggle to compare providers, trust quoted work, and move from inquiry to booked repair without friction.",
+        "solution_summary": "Fixlane structures job intake, quote comparison, and booking decisions into one trust-oriented homeowner workflow.",
+        "primary_platform": "Web marketplace",
+        "monetization_model": "Transaction take rate with optional promoted listings",
+        "differentiator": "It emphasizes quote clarity and trust signals instead of overwhelming homeowners with a generic lead marketplace."
+      },
+      "user_journey_loops": [
+        {
+          "name": "Submit the repair request",
+          "objective": "Turn a vague repair issue into a structured job request.",
+          "user_steps": [
+            "Describe the problem",
+            "Upload photos or details",
+            "Receive a normalized job brief"
+          ],
+          "success_signal": "Users complete the intake without dropping off due to complexity.",
+          "time_to_value": "Under 7 minutes"
+        },
+        {
+          "name": "Compare and select a pro",
+          "objective": "Help the homeowner understand which quote feels trustworthy and appropriate.",
+          "user_steps": [
+            "Compare quotes side by side",
+            "Review provider trust signals",
+            "Book the preferred option"
+          ],
+          "success_signal": "A user moves from intake to booking in the same session.",
+          "time_to_value": "10-20 minutes"
+        },
+        {
+          "name": "Return for future maintenance",
+          "objective": "Create enough trust that homeowners come back for the next household issue.",
+          "user_steps": [
+            "Review prior jobs",
+            "Reuse saved property details",
+            "Book follow-up work"
+          ],
+          "success_signal": "Repeat bookings start to appear within the first few months.",
+          "time_to_value": "Within 90 days"
+        }
+      ],
+      "monetization_risk_notes": [
+        {
+          "category": "delivery",
+          "priority": "high",
+          "title": "Trust operations are a real operational burden",
+          "note": "A marketplace cannot rely on UX alone when provider quality disputes are part of the workflow.",
+          "mitigation": "Define verification, dispute handling, and escalation procedures before broad launch."
+        },
+        {
+          "category": "go_to_market",
+          "priority": "medium",
+          "title": "Single-city focus needs a clear wedge",
+          "note": "Local density and a narrow service category are critical for early marketplace liquidity.",
+          "mitigation": "Start with one repair category in one geography before expanding supply."
+        },
+        {
+          "category": "monetization",
+          "priority": "medium",
+          "title": "Take-rate sensitivity can slow supply acquisition",
+          "note": "Providers may resist a commission model until the marketplace clearly improves close rates.",
+          "mitigation": "Test lead fees or featured listings before locking in one monetization model."
+        },
+        {
+          "category": "safety",
+          "priority": "medium",
+          "title": "Provider trust signals need more than ratings",
+          "note": "Homeowners expect verification, insurance, and transparent dispute rules.",
+          "mitigation": "Add verification badges and visible trust criteria before scaling acquisition."
+        }
+      ],
+      "task_list": [
+        {
+          "id": 1,
+          "title": "Narrow the launch category and service geography",
+          "priority": "high",
+          "rationale": "Marketplace density matters more than breadth in the first release.",
+          "estimated_hours": 5.0,
+          "dependencies": []
+        },
+        {
+          "id": 2,
+          "title": "Define homeowner intake and quote comparison schema",
+          "priority": "high",
+          "rationale": "A normalized job and quote format is needed before trust and booking UX can work.",
+          "estimated_hours": 9.0,
+          "dependencies": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Design trust, verification, and dispute handling policies",
+          "priority": "high",
+          "rationale": "Operational trust policy is part of the product, not an afterthought.",
+          "estimated_hours": 12.0,
+          "dependencies": [
+            1
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Build the booking workflow prototype",
+          "priority": "medium",
+          "rationale": "The core user value depends on moving from request to booked work smoothly.",
+          "estimated_hours": 22.0,
+          "dependencies": [
+            2,
+            3
+          ]
+        },
+        {
+          "id": 5,
+          "title": "Recruit the first local supply cohort",
+          "priority": "medium",
+          "rationale": "Marketplace quality cannot be validated without real provider behavior.",
+          "estimated_hours": 14.0,
+          "dependencies": [
+            3
+          ]
+        }
+      ],
+      "follow_up_questions": [
+        {
+          "question": "Which repair category has the best mix of urgency, ticket size, and repeat demand for launch?",
+          "category": "user",
+          "reason": "This choice shapes both liquidity and monetization."
+        },
+        {
+          "question": "What trust signal matters most to the homeowner at booking time?",
+          "category": "workflow",
+          "reason": "The product should emphasize the signal that best reduces hesitation."
+        },
+        {
+          "question": "Will local pros tolerate a take rate, or is a listing fee more realistic at first?",
+          "category": "pricing",
+          "reason": "The answer changes both acquisition and unit economics."
+        }
+      ]
+    },
+    "critic_review": {
+      "ready_for_delivery": false,
+      "completeness_score": 0.89,
+      "clarity_score": 0.86,
+      "consistency_score": 0.84,
+      "safety_notes": [
+        "Marketplace flows usually need dispute handling, trust signals, and provider quality controls."
+      ],
+      "issues": [
+        "Trust and dispute handling need sharper operational detail before the plan feels launch-ready."
+      ],
+      "recommended_revisions": [
+        "Specify verification, refund, and dispute ownership before scaling the go-to-market plan."
+      ]
+    },
+    "evaluation": {
+      "completeness_score": 0.91,
+      "consistency_score": 0.86,
+      "latency_ms": 124,
+      "estimated_cost_usd": 0.000879,
+      "total_tokens": 781,
+      "quality_score": 0.887
+    },
+    "agent_runs": [
+      {
+        "agent_name": "planner",
+        "agent_version": "1.0.0",
+        "prompt_name": "planner_strategy",
+        "prompt_version": "2026-04-02",
+        "model_provider": "mock",
+        "model_name": "mock-heuristic-v1",
+        "latency_ms": 73,
+        "prompt_tokens": 209,
+        "completion_tokens": 248,
+        "total_tokens": 457,
+        "estimated_cost_usd": 0.000514,
+        "retries": 0
+      },
+      {
+        "agent_name": "critic",
+        "agent_version": "1.0.0",
+        "prompt_name": "critic_strategy_review",
+        "prompt_version": "2026-04-02",
+        "model_provider": "mock",
+        "model_name": "mock-heuristic-v1",
+        "latency_ms": 43,
+        "prompt_tokens": 156,
+        "completion_tokens": 168,
+        "total_tokens": 324,
+        "estimated_cost_usd": 0.000365,
+        "retries": 0
+      }
+    ],
+    "prompt_versions": {
+      "planner_strategy": "2026-04-02",
+      "critic_strategy_review": "2026-04-02"
+    },
+    "editable_json": {
+      "product_brief": {
+        "product_name": "Fixlane",
+        "category": "Marketplace",
+        "target_user": "Service buyers and local operators coordinating offline work",
+        "core_problem": "Homeowners struggle to compare providers, trust quoted work, and move from inquiry to booked repair without friction.",
+        "solution_summary": "Fixlane structures job intake, quote comparison, and booking decisions into one trust-oriented homeowner workflow.",
+        "primary_platform": "Web marketplace",
+        "monetization_model": "Transaction take rate with optional promoted listings",
+        "differentiator": "It emphasizes quote clarity and trust signals instead of overwhelming homeowners with a generic lead marketplace."
+      },
+      "user_journey_loops": [
+        {
+          "name": "Submit the repair request",
+          "objective": "Turn a vague repair issue into a structured job request.",
+          "user_steps": [
+            "Describe the problem",
+            "Upload photos or details",
+            "Receive a normalized job brief"
+          ],
+          "success_signal": "Users complete the intake without dropping off due to complexity.",
+          "time_to_value": "Under 7 minutes"
+        },
+        {
+          "name": "Compare and select a pro",
+          "objective": "Help the homeowner understand which quote feels trustworthy and appropriate.",
+          "user_steps": [
+            "Compare quotes side by side",
+            "Review provider trust signals",
+            "Book the preferred option"
+          ],
+          "success_signal": "A user moves from intake to booking in the same session.",
+          "time_to_value": "10-20 minutes"
+        },
+        {
+          "name": "Return for future maintenance",
+          "objective": "Create enough trust that homeowners come back for the next household issue.",
+          "user_steps": [
+            "Review prior jobs",
+            "Reuse saved property details",
+            "Book follow-up work"
+          ],
+          "success_signal": "Repeat bookings start to appear within the first few months.",
+          "time_to_value": "Within 90 days"
+        }
+      ],
+      "monetization_risk_notes": [
+        {
+          "category": "delivery",
+          "priority": "high",
+          "title": "Trust operations are a real operational burden",
+          "note": "A marketplace cannot rely on UX alone when provider quality disputes are part of the workflow.",
+          "mitigation": "Define verification, dispute handling, and escalation procedures before broad launch."
+        },
+        {
+          "category": "go_to_market",
+          "priority": "medium",
+          "title": "Single-city focus needs a clear wedge",
+          "note": "Local density and a narrow service category are critical for early marketplace liquidity.",
+          "mitigation": "Start with one repair category in one geography before expanding supply."
+        },
+        {
+          "category": "monetization",
+          "priority": "medium",
+          "title": "Take-rate sensitivity can slow supply acquisition",
+          "note": "Providers may resist a commission model until the marketplace clearly improves close rates.",
+          "mitigation": "Test lead fees or featured listings before locking in one monetization model."
+        },
+        {
+          "category": "safety",
+          "priority": "medium",
+          "title": "Provider trust signals need more than ratings",
+          "note": "Homeowners expect verification, insurance, and transparent dispute rules.",
+          "mitigation": "Add verification badges and visible trust criteria before scaling acquisition."
+        }
+      ],
+      "task_list": [
+        {
+          "id": 1,
+          "title": "Narrow the launch category and service geography",
+          "priority": "high",
+          "rationale": "Marketplace density matters more than breadth in the first release.",
+          "estimated_hours": 5.0,
+          "dependencies": []
+        },
+        {
+          "id": 2,
+          "title": "Define homeowner intake and quote comparison schema",
+          "priority": "high",
+          "rationale": "A normalized job and quote format is needed before trust and booking UX can work.",
+          "estimated_hours": 9.0,
+          "dependencies": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Design trust, verification, and dispute handling policies",
+          "priority": "high",
+          "rationale": "Operational trust policy is part of the product, not an afterthought.",
+          "estimated_hours": 12.0,
+          "dependencies": [
+            1
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Build the booking workflow prototype",
+          "priority": "medium",
+          "rationale": "The core user value depends on moving from request to booked work smoothly.",
+          "estimated_hours": 22.0,
+          "dependencies": [
+            2,
+            3
+          ]
+        },
+        {
+          "id": 5,
+          "title": "Recruit the first local supply cohort",
+          "priority": "medium",
+          "rationale": "Marketplace quality cannot be validated without real provider behavior.",
+          "estimated_hours": 14.0,
+          "dependencies": [
+            3
+          ]
+        }
+      ],
+      "follow_up_questions": [
+        {
+          "question": "Which repair category has the best mix of urgency, ticket size, and repeat demand for launch?",
+          "category": "user",
+          "reason": "This choice shapes both liquidity and monetization."
+        },
+        {
+          "question": "What trust signal matters most to the homeowner at booking time?",
+          "category": "workflow",
+          "reason": "The product should emphasize the signal that best reduces hesitation."
+        },
+        {
+          "question": "Will local pros tolerate a take rate, or is a listing fee more realistic at first?",
+          "category": "pricing",
+          "reason": "The answer changes both acquisition and unit economics."
+        }
+      ]
+    }
+  }
+}

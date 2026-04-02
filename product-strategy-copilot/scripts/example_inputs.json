@@ -1,0 +1,62 @@
+[
+  {
+    "case_id": "case_01",
+    "title": "Agency Meeting Assistant",
+    "concept": "An AI assistant for boutique agencies that turns messy meeting notes into client-ready summaries, follow-up emails, and internal task plans.",
+    "additional_context": "Optimize for time-to-value within one session."
+  },
+  {
+    "case_id": "case_02",
+    "title": "Meal Planning Subscription",
+    "concept": "A mobile subscription app for busy parents that turns dietary goals, school schedules, and grocery budgets into flexible weekly meal plans.",
+    "additional_context": "Consumer subscription with strong repeat usage."
+  },
+  {
+    "case_id": "case_03",
+    "title": "Local Repair Marketplace",
+    "concept": "A marketplace that helps homeowners compare vetted repair professionals, manage quotes, and convert decisions into booked jobs faster.",
+    "additional_context": "Launch in one city first and emphasize trust."
+  },
+  {
+    "case_id": "case_04",
+    "title": "Clinic Compliance Assistant",
+    "concept": "A workflow assistant for small clinics that turns policy updates into staff action plans, documentation checklists, and audit reminders.",
+    "additional_context": "Compliance-heavy domain with human review."
+  },
+  {
+    "case_id": "case_05",
+    "title": "Freelancer Proposal Copilot",
+    "concept": "A product for freelancers that turns rough client calls into project scopes, timelines, and proposal drafts they can edit before sending.",
+    "additional_context": "Single-user product first, team features later."
+  },
+  {
+    "case_id": "case_06",
+    "title": "Retail Ops Analytics",
+    "concept": "A dashboard for multi-location retailers that explains inventory issues, promotion impact, and margin changes in plain language.",
+    "additional_context": "B2B SaaS for operators, not analysts."
+  },
+  {
+    "case_id": "case_07",
+    "title": "Creator Sponsorship CRM",
+    "concept": "A lightweight CRM for creators that tracks sponsorship outreach, deal status, deliverables, and payment follow-up without enterprise complexity.",
+    "additional_context": "Position against spreadsheets, not Salesforce."
+  },
+  {
+    "case_id": "case_08",
+    "title": "Hiring Debrief Assistant",
+    "concept": "A product that helps startup hiring teams turn scattered interview notes into structured debriefs, scorecards, and decision summaries.",
+    "additional_context": "Must feel useful even before HR integrations exist."
+  },
+  {
+    "case_id": "case_09",
+    "title": "Small Law Intake Tool",
+    "concept": "A client intake assistant for small law firms that turns messy discovery calls into organized intake summaries and next-step checklists.",
+    "additional_context": "High trust requirements and clear boundaries on legal advice."
+  },
+  {
+    "case_id": "case_10",
+    "title": "Property Manager Workflow Copilot",
+    "concept": "A workflow copilot for property managers that turns maintenance reports, tenant context, and vendor availability into recommended action plans.",
+    "additional_context": "Mobile-friendly operations workflow."
+  }
+]

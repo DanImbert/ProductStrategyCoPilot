@@ -1,0 +1,355 @@
+{
+  "request": {
+    "concept": "A mobile subscription app for busy parents that turns dietary goals, school schedules, and grocery budgets into flexible weekly meal plans.",
+    "additional_context": "Consumer subscription with strong repeat usage."
+  },
+  "response": {
+    "request_id": "sample_meal_planning_subscription",
+    "generated_at": "2026-04-02T12:09:00Z",
+    "input": {
+      "concept": "A mobile subscription app for busy parents that turns dietary goals, school schedules, and grocery budgets into flexible weekly meal plans.",
+      "additional_context": "Consumer subscription with strong repeat usage."
+    },
+    "strategy_output": {
+      "product_brief": {
+        "product_name": "Weeknight Flow",
+        "category": "Consumer subscription",
+        "target_user": "Busy consumers looking for convenience and consistency",
+        "core_problem": "Families struggle to turn schedules, food preferences, and grocery limits into realistic meal plans they will actually reuse.",
+        "solution_summary": "Weeknight Flow turns household constraints into flexible weekly meal plans, shopping prompts, and repeatable routines.",
+        "primary_platform": "Mobile app",
+        "monetization_model": "Tiered subscription",
+        "differentiator": "It emphasizes flexible household planning instead of generic recipe discovery."
+      },
+      "user_journey_loops": [
+        {
+          "name": "Set the week up",
+          "objective": "Capture the family's constraints in a low-friction setup flow.",
+          "user_steps": [
+            "Enter schedule and dietary constraints",
+            "Set budget and prep preferences",
+            "Generate a first weekly plan"
+          ],
+          "success_signal": "The user sees a plan that feels realistic for the coming week.",
+          "time_to_value": "Under 5 minutes"
+        },
+        {
+          "name": "Adjust and reuse the plan",
+          "objective": "Help the user adapt the plan as the week changes.",
+          "user_steps": [
+            "Swap meals based on time or ingredients",
+            "Review grocery impacts",
+            "Save successful patterns"
+          ],
+          "success_signal": "The plan remains useful instead of being abandoned after one disruption.",
+          "time_to_value": "5-10 minutes"
+        },
+        {
+          "name": "Come back next week",
+          "objective": "Turn the product into a repeat household planning habit.",
+          "user_steps": [
+            "Reuse last week's template",
+            "Adjust household constraints",
+            "Start a new plan quickly"
+          ],
+          "success_signal": "The household starts the next weekly plan from the app instead of from scratch.",
+          "time_to_value": "Within 7 days"
+        }
+      ],
+      "monetization_risk_notes": [
+        {
+          "category": "monetization",
+          "priority": "medium",
+          "title": "Subscription value must be obvious quickly",
+          "note": "Families will cancel fast if the product feels like a nicer recipe app instead of a planning shortcut.",
+          "mitigation": "Measure time saved and repeat weekly usage before increasing feature scope."
+        },
+        {
+          "category": "retention",
+          "priority": "high",
+          "title": "Repeat habit is the core retention challenge",
+          "note": "The product only works as a subscription if it becomes part of a weekly routine.",
+          "mitigation": "Optimize the weekly restart flow and saved templates before adding secondary features."
+        },
+        {
+          "category": "delivery",
+          "priority": "medium",
+          "title": "Personalization quality needs to feel grounded",
+          "note": "Meal plans that ignore real household constraints will erode trust immediately.",
+          "mitigation": "Prioritize a small set of high-value constraints and test them thoroughly."
+        },
+        {
+          "category": "go_to_market",
+          "priority": "medium",
+          "title": "Positioning should focus on planning stress reduction",
+          "note": "Competing as a broad nutrition or recipe app makes differentiation weaker.",
+          "mitigation": "Lead the messaging with planning relief, flexibility, and repeat family use."
+        }
+      ],
+      "task_list": [
+        {
+          "id": 1,
+          "title": "Define the weekly planning workflow for the first household segment",
+          "priority": "high",
+          "rationale": "A clear first household use case is needed before broad personalization work.",
+          "estimated_hours": 5.0,
+          "dependencies": []
+        },
+        {
+          "id": 2,
+          "title": "Write the structured meal-plan schema and critique rubric",
+          "priority": "high",
+          "rationale": "The schema should capture constraints, substitutions, and repeatability in one contract.",
+          "estimated_hours": 8.0,
+          "dependencies": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Build the weekly plan generation and editing flow",
+          "priority": "high",
+          "rationale": "The product value depends on turning setup into an editable first plan quickly.",
+          "estimated_hours": 18.0,
+          "dependencies": [
+            2
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Validate the repeat-week workflow with early households",
+          "priority": "medium",
+          "rationale": "Repeat behavior matters more than one-time setup delight.",
+          "estimated_hours": 9.0,
+          "dependencies": [
+            3
+          ]
+        },
+        {
+          "id": 5,
+          "title": "Test subscription packaging and free-tier boundaries",
+          "priority": "medium",
+          "rationale": "Pricing decisions influence whether saved history and family sharing are core features.",
+          "estimated_hours": 6.0,
+          "dependencies": [
+            3
+          ]
+        }
+      ],
+      "follow_up_questions": [
+        {
+          "question": "Which family segment is most likely to pay for planning relief first?",
+          "category": "user",
+          "reason": "This narrows both product messaging and feature prioritization."
+        },
+        {
+          "question": "What part of weekly meal setup must feel nearly instant for the app to seem useful?",
+          "category": "workflow",
+          "reason": "The answer defines the true time-to-value target."
+        },
+        {
+          "question": "Should pricing optimize for individual experimentation or family plan rollout first?",
+          "category": "pricing",
+          "reason": "This changes account structure and retention mechanics."
+        }
+      ]
+    },
+    "critic_review": {
+      "ready_for_delivery": true,
+      "completeness_score": 0.91,
+      "clarity_score": 0.89,
+      "consistency_score": 0.9,
+      "safety_notes": [],
+      "issues": [],
+      "recommended_revisions": [
+        "Validate the repeat-week workflow before investing in recipe breadth or nutrition-adjacent features."
+      ]
+    },
+    "evaluation": {
+      "completeness_score": 0.93,
+      "consistency_score": 0.91,
+      "latency_ms": 121,
+      "estimated_cost_usd": 0.000858,
+      "total_tokens": 762,
+      "quality_score": 0.911
+    },
+    "agent_runs": [
+      {
+        "agent_name": "planner",
+        "agent_version": "1.0.0",
+        "prompt_name": "planner_strategy",
+        "prompt_version": "2026-04-02",
+        "model_provider": "mock",
+        "model_name": "mock-heuristic-v1",
+        "latency_ms": 71,
+        "prompt_tokens": 206,
+        "completion_tokens": 241,
+        "total_tokens": 447,
+        "estimated_cost_usd": 0.000503,
+        "retries": 0
+      },
+      {
+        "agent_name": "critic",
+        "agent_version": "1.0.0",
+        "prompt_name": "critic_strategy_review",
+        "prompt_version": "2026-04-02",
+        "model_provider": "mock",
+        "model_name": "mock-heuristic-v1",
+        "latency_ms": 42,
+        "prompt_tokens": 149,
+        "completion_tokens": 166,
+        "total_tokens": 315,
+        "estimated_cost_usd": 0.000355,
+        "retries": 0
+      }
+    ],
+    "prompt_versions": {
+      "planner_strategy": "2026-04-02",
+      "critic_strategy_review": "2026-04-02"
+    },
+    "editable_json": {
+      "product_brief": {
+        "product_name": "Weeknight Flow",
+        "category": "Consumer subscription",
+        "target_user": "Busy consumers looking for convenience and consistency",
+        "core_problem": "Families struggle to turn schedules, food preferences, and grocery limits into realistic meal plans they will actually reuse.",
+        "solution_summary": "Weeknight Flow turns household constraints into flexible weekly meal plans, shopping prompts, and repeatable routines.",
+        "primary_platform": "Mobile app",
+        "monetization_model": "Tiered subscription",
+        "differentiator": "It emphasizes flexible household planning instead of generic recipe discovery."
+      },
+      "user_journey_loops": [
+        {
+          "name": "Set the week up",
+          "objective": "Capture the family's constraints in a low-friction setup flow.",
+          "user_steps": [
+            "Enter schedule and dietary constraints",
+            "Set budget and prep preferences",
+            "Generate a first weekly plan"
+          ],
+          "success_signal": "The user sees a plan that feels realistic for the coming week.",
+          "time_to_value": "Under 5 minutes"
+        },
+        {
+          "name": "Adjust and reuse the plan",
+          "objective": "Help the user adapt the plan as the week changes.",
+          "user_steps": [
+            "Swap meals based on time or ingredients",
+            "Review grocery impacts",
+            "Save successful patterns"
+          ],
+          "success_signal": "The plan remains useful instead of being abandoned after one disruption.",
+          "time_to_value": "5-10 minutes"
+        },
+        {
+          "name": "Come back next week",
+          "objective": "Turn the product into a repeat household planning habit.",
+          "user_steps": [
+            "Reuse last week's template",
+            "Adjust household constraints",
+            "Start a new plan quickly"
+          ],
+          "success_signal": "The household starts the next weekly plan from the app instead of from scratch.",
+          "time_to_value": "Within 7 days"
+        }
+      ],
+      "monetization_risk_notes": [
+        {
+          "category": "monetization",
+          "priority": "medium",
+          "title": "Subscription value must be obvious quickly",
+          "note": "Families will cancel fast if the product feels like a nicer recipe app instead of a planning shortcut.",
+          "mitigation": "Measure time saved and repeat weekly usage before increasing feature scope."
+        },
+        {
+          "category": "retention",
+          "priority": "high",
+          "title": "Repeat habit is the core retention challenge",
+          "note": "The product only works as a subscription if it becomes part of a weekly routine.",
+          "mitigation": "Optimize the weekly restart flow and saved templates before adding secondary features."
+        },
+        {
+          "category": "delivery",
+          "priority": "medium",
+          "title": "Personalization quality needs to feel grounded",
+          "note": "Meal plans that ignore real household constraints will erode trust immediately.",
+          "mitigation": "Prioritize a small set of high-value constraints and test them thoroughly."
+        },
+        {
+          "category": "go_to_market",
+          "priority": "medium",
+          "title": "Positioning should focus on planning stress reduction",
+          "note": "Competing as a broad nutrition or recipe app makes differentiation weaker.",
+          "mitigation": "Lead the messaging with planning relief, flexibility, and repeat family use."
+        }
+      ],
+      "task_list": [
+        {
+          "id": 1,
+          "title": "Define the weekly planning workflow for the first household segment",
+          "priority": "high",
+          "rationale": "A clear first household use case is needed before broad personalization work.",
+          "estimated_hours": 5.0,
+          "dependencies": []
+        },
+        {
+          "id": 2,
+          "title": "Write the structured meal-plan schema and critique rubric",
+          "priority": "high",
+          "rationale": "The schema should capture constraints, substitutions, and repeatability in one contract.",
+          "estimated_hours": 8.0,
+          "dependencies": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Build the weekly plan generation and editing flow",
+          "priority": "high",
+          "rationale": "The product value depends on turning setup into an editable first plan quickly.",
+          "estimated_hours": 18.0,
+          "dependencies": [
+            2
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Validate the repeat-week workflow with early households",
+          "priority": "medium",
+          "rationale": "Repeat behavior matters more than one-time setup delight.",
+          "estimated_hours": 9.0,
+          "dependencies": [
+            3
+          ]
+        },
+        {
+          "id": 5,
+          "title": "Test subscription packaging and free-tier boundaries",
+          "priority": "medium",
+          "rationale": "Pricing decisions influence whether saved history and family sharing are core features.",
+          "estimated_hours": 6.0,
+          "dependencies": [
+            3
+          ]
+        }
+      ],
+      "follow_up_questions": [
+        {
+          "question": "Which family segment is most likely to pay for planning relief first?",
+          "category": "user",
+          "reason": "This narrows both product messaging and feature prioritization."
+        },
+        {
+          "question": "What part of weekly meal setup must feel nearly instant for the app to seem useful?",
+          "category": "workflow",
+          "reason": "The answer defines the true time-to-value target."
+        },
+        {
+          "question": "Should pricing optimize for individual experimentation or family plan rollout first?",
+          "category": "pricing",
+          "reason": "This changes account structure and retention mechanics."
+        }
+      ]
+    }
+  }
+}

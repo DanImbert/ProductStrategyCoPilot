@@ -1,0 +1,361 @@
+{
+  "request": {
+    "concept": "A workflow assistant for small clinics that turns policy updates into staff action plans, documentation checklists, and audit reminders.",
+    "additional_context": "Compliance-heavy domain with human review."
+  },
+  "response": {
+    "request_id": "sample_clinic_compliance_assistant",
+    "generated_at": "2026-04-02T12:06:00Z",
+    "input": {
+      "concept": "A workflow assistant for small clinics that turns policy updates into staff action plans, documentation checklists, and audit reminders.",
+      "additional_context": "Compliance-heavy domain with human review."
+    },
+    "strategy_output": {
+      "product_brief": {
+        "product_name": "TraceLedger",
+        "category": "Workflow SaaS",
+        "target_user": "Operations managers in small healthcare teams with compliance overhead",
+        "core_problem": "Small clinics struggle to translate policy changes into specific staff actions, documentation work, and audit preparation.",
+        "solution_summary": "TraceLedger converts policy updates into structured clinic action plans, responsibility checklists, and reviewable audit reminders.",
+        "primary_platform": "Web app",
+        "monetization_model": "Per-seat subscription with team plans",
+        "differentiator": "It focuses on policy-to-action workflow clarity for small teams rather than trying to replace formal compliance systems."
+      },
+      "user_journey_loops": [
+        {
+          "name": "Ingest the policy update",
+          "objective": "Turn a regulation or policy change into a structured internal summary.",
+          "user_steps": [
+            "Paste the update or upload the source",
+            "Tag the affected clinic function",
+            "Generate a structured summary"
+          ],
+          "success_signal": "Ops leads can understand the likely impact without re-reading the entire source document repeatedly.",
+          "time_to_value": "Under 10 minutes"
+        },
+        {
+          "name": "Review the clinic action plan",
+          "objective": "Translate the summary into responsible owners and deadlines.",
+          "user_steps": [
+            "Review generated action items",
+            "Assign owners and due dates",
+            "Mark items that require legal or compliance review"
+          ],
+          "success_signal": "The clinic has a shareable first-pass action plan with clear accountability.",
+          "time_to_value": "10-20 minutes"
+        },
+        {
+          "name": "Track audit readiness",
+          "objective": "Keep the organization prepared for future review and documentation checks.",
+          "user_steps": [
+            "Track open items",
+            "Review documentation gaps",
+            "Prepare for the next audit checkpoint"
+          ],
+          "success_signal": "Teams return to the workflow for subsequent updates instead of reverting to manual spreadsheets.",
+          "time_to_value": "Within 30 days"
+        }
+      ],
+      "monetization_risk_notes": [
+        {
+          "category": "compliance",
+          "priority": "high",
+          "title": "Regulated workflows raise trust and policy requirements",
+          "note": "Users may assume the product guarantees compliance when it should only assist with internal planning.",
+          "mitigation": "Add review boundaries, human sign-off, and visible disclaimers around legal or compliance interpretation."
+        },
+        {
+          "category": "safety",
+          "priority": "high",
+          "title": "Human review must stay central",
+          "note": "Generated action plans could be misused as final compliance advice if review is not explicit.",
+          "mitigation": "Require reviewer acknowledgment before plans are exported or marked complete."
+        },
+        {
+          "category": "delivery",
+          "priority": "medium",
+          "title": "Source formatting variability can reduce output quality",
+          "note": "Clinic teams may paste policy language in many inconsistent formats.",
+          "mitigation": "Normalize ingestion and test the planner against realistic input formats."
+        },
+        {
+          "category": "retention",
+          "priority": "medium",
+          "title": "Usage frequency depends on update cadence",
+          "note": "The product is more valuable if it helps with ongoing internal readiness, not just occasional policy changes.",
+          "mitigation": "Add audit-readiness and checklist tracking to make the workflow repeatable."
+        }
+      ],
+      "task_list": [
+        {
+          "id": 1,
+          "title": "Define the exact compliance workflow boundary for the first release",
+          "priority": "high",
+          "rationale": "The product must be clear about what it assists with and what remains a human responsibility.",
+          "estimated_hours": 6.0,
+          "dependencies": []
+        },
+        {
+          "id": 2,
+          "title": "Write the policy-to-action output schema",
+          "priority": "high",
+          "rationale": "The schema is the core product contract for generation, critique, and review.",
+          "estimated_hours": 8.0,
+          "dependencies": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Implement the ingestion and reviewable action-plan prototype",
+          "priority": "high",
+          "rationale": "The team needs an end-to-end path before adding dashboards or collaboration layers.",
+          "estimated_hours": 24.0,
+          "dependencies": [
+            2
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Add explicit human sign-off and review controls",
+          "priority": "medium",
+          "rationale": "Review boundaries are essential to keep trust and compliance expectations realistic.",
+          "estimated_hours": 10.0,
+          "dependencies": [
+            3
+          ]
+        },
+        {
+          "id": 5,
+          "title": "Validate the workflow with two clinic operations teams",
+          "priority": "medium",
+          "rationale": "The product should be tested against real clinic policy-change behavior before expansion.",
+          "estimated_hours": 12.0,
+          "dependencies": [
+            3,
+            4
+          ]
+        }
+      ],
+      "follow_up_questions": [
+        {
+          "question": "Which policy-change scenarios create the most operational pain today?",
+          "category": "user",
+          "reason": "The product should focus on the most painful and frequent workflow first."
+        },
+        {
+          "question": "What review step must remain manual for users to trust the system?",
+          "category": "workflow",
+          "reason": "This defines the correct boundary between assistance and compliance ownership."
+        },
+        {
+          "question": "What source data needs to be retained for audit defensibility?",
+          "category": "data",
+          "reason": "Audit-readiness requirements will shape storage and review design."
+        }
+      ]
+    },
+    "critic_review": {
+      "ready_for_delivery": false,
+      "completeness_score": 0.92,
+      "clarity_score": 0.89,
+      "consistency_score": 0.9,
+      "safety_notes": [
+        "If this workflow influences regulated decisions, the product needs human review boundaries and stronger auditability."
+      ],
+      "issues": [
+        "The draft should state more explicitly that final compliance interpretation remains human-owned."
+      ],
+      "recommended_revisions": [
+        "Add explicit reviewer roles and audit-trail requirements before presenting the plan as launch-ready."
+      ]
+    },
+    "evaluation": {
+      "completeness_score": 0.94,
+      "consistency_score": 0.9,
+      "latency_ms": 129,
+      "estimated_cost_usd": 0.000901,
+      "total_tokens": 804,
+      "quality_score": 0.912
+    },
+    "agent_runs": [
+      {
+        "agent_name": "planner",
+        "agent_version": "1.0.0",
+        "prompt_name": "planner_strategy",
+        "prompt_version": "2026-04-02",
+        "model_provider": "mock",
+        "model_name": "mock-heuristic-v1",
+        "latency_ms": 78,
+        "prompt_tokens": 214,
+        "completion_tokens": 256,
+        "total_tokens": 470,
+        "estimated_cost_usd": 0.000529,
+        "retries": 0
+      },
+      {
+        "agent_name": "critic",
+        "agent_version": "1.0.0",
+        "prompt_name": "critic_strategy_review",
+        "prompt_version": "2026-04-02",
+        "model_provider": "mock",
+        "model_name": "mock-heuristic-v1",
+        "latency_ms": 46,
+        "prompt_tokens": 161,
+        "completion_tokens": 173,
+        "total_tokens": 334,
+        "estimated_cost_usd": 0.000372,
+        "retries": 0
+      }
+    ],
+    "prompt_versions": {
+      "planner_strategy": "2026-04-02",
+      "critic_strategy_review": "2026-04-02"
+    },
+    "editable_json": {
+      "product_brief": {
+        "product_name": "TraceLedger",
+        "category": "Workflow SaaS",
+        "target_user": "Operations managers in small healthcare teams with compliance overhead",
+        "core_problem": "Small clinics struggle to translate policy changes into specific staff actions, documentation work, and audit preparation.",
+        "solution_summary": "TraceLedger converts policy updates into structured clinic action plans, responsibility checklists, and reviewable audit reminders.",
+        "primary_platform": "Web app",
+        "monetization_model": "Per-seat subscription with team plans",
+        "differentiator": "It focuses on policy-to-action workflow clarity for small teams rather than trying to replace formal compliance systems."
+      },
+      "user_journey_loops": [
+        {
+          "name": "Ingest the policy update",
+          "objective": "Turn a regulation or policy change into a structured internal summary.",
+          "user_steps": [
+            "Paste the update or upload the source",
+            "Tag the affected clinic function",
+            "Generate a structured summary"
+          ],
+          "success_signal": "Ops leads can understand the likely impact without re-reading the entire source document repeatedly.",
+          "time_to_value": "Under 10 minutes"
+        },
+        {
+          "name": "Review the clinic action plan",
+          "objective": "Translate the summary into responsible owners and deadlines.",
+          "user_steps": [
+            "Review generated action items",
+            "Assign owners and due dates",
+            "Mark items that require legal or compliance review"
+          ],
+          "success_signal": "The clinic has a shareable first-pass action plan with clear accountability.",
+          "time_to_value": "10-20 minutes"
+        },
+        {
+          "name": "Track audit readiness",
+          "objective": "Keep the organization prepared for future review and documentation checks.",
+          "user_steps": [
+            "Track open items",
+            "Review documentation gaps",
+            "Prepare for the next audit checkpoint"
+          ],
+          "success_signal": "Teams return to the workflow for subsequent updates instead of reverting to manual spreadsheets.",
+          "time_to_value": "Within 30 days"
+        }
+      ],
+      "monetization_risk_notes": [
+        {
+          "category": "compliance",
+          "priority": "high",
+          "title": "Regulated workflows raise trust and policy requirements",
+          "note": "Users may assume the product guarantees compliance when it should only assist with internal planning.",
+          "mitigation": "Add review boundaries, human sign-off, and visible disclaimers around legal or compliance interpretation."
+        },
+        {
+          "category": "safety",
+          "priority": "high",
+          "title": "Human review must stay central",
+          "note": "Generated action plans could be misused as final compliance advice if review is not explicit.",
+          "mitigation": "Require reviewer acknowledgment before plans are exported or marked complete."
+        },
+        {
+          "category": "delivery",
+          "priority": "medium",
+          "title": "Source formatting variability can reduce output quality",
+          "note": "Clinic teams may paste policy language in many inconsistent formats.",
+          "mitigation": "Normalize ingestion and test the planner against realistic input formats."
+        },
+        {
+          "category": "retention",
+          "priority": "medium",
+          "title": "Usage frequency depends on update cadence",
+          "note": "The product is more valuable if it helps with ongoing internal readiness, not just occasional policy changes.",
+          "mitigation": "Add audit-readiness and checklist tracking to make the workflow repeatable."
+        }
+      ],
+      "task_list": [
+        {
+          "id": 1,
+          "title": "Define the exact compliance workflow boundary for the first release",
+          "priority": "high",
+          "rationale": "The product must be clear about what it assists with and what remains a human responsibility.",
+          "estimated_hours": 6.0,
+          "dependencies": []
+        },
+        {
+          "id": 2,
+          "title": "Write the policy-to-action output schema",
+          "priority": "high",
+          "rationale": "The schema is the core product contract for generation, critique, and review.",
+          "estimated_hours": 8.0,
+          "dependencies": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Implement the ingestion and reviewable action-plan prototype",
+          "priority": "high",
+          "rationale": "The team needs an end-to-end path before adding dashboards or collaboration layers.",
+          "estimated_hours": 24.0,
+          "dependencies": [
+            2
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Add explicit human sign-off and review controls",
+          "priority": "medium",
+          "rationale": "Review boundaries are essential to keep trust and compliance expectations realistic.",
+          "estimated_hours": 10.0,
+          "dependencies": [
+            3
+          ]
+        },
+        {
+          "id": 5,
+          "title": "Validate the workflow with two clinic operations teams",
+          "priority": "medium",
+          "rationale": "The product should be tested against real clinic policy-change behavior before expansion.",
+          "estimated_hours": 12.0,
+          "dependencies": [
+            3,
+            4
+          ]
+        }
+      ],
+      "follow_up_questions": [
+        {
+          "question": "Which policy-change scenarios create the most operational pain today?",
+          "category": "user",
+          "reason": "The product should focus on the most painful and frequent workflow first."
+        },
+        {
+          "question": "What review step must remain manual for users to trust the system?",
+          "category": "workflow",
+          "reason": "This defines the correct boundary between assistance and compliance ownership."
+        },
+        {
+          "question": "What source data needs to be retained for audit defensibility?",
+          "category": "data",
+          "reason": "Audit-readiness requirements will shape storage and review design."
+        }
+      ]
+    }
+  }
+}
