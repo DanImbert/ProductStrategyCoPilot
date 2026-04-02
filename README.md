@@ -78,7 +78,7 @@ flowchart LR
 
 ### Planner agent
 
-The Planner agent turns unstructured input into a typed strategy document. Its prompt is versioned in [`src/core/prompt_registry.py`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/src/core/prompt_registry.py), and its execution logic lives in [`src/agents/planner.py`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/src/agents/planner.py).
+The Planner agent turns unstructured input into a typed strategy document. Its prompt is versioned in [`src/core/prompt_registry.py`](/Users/scarlettv/Documents/AI-Experiement/src/core/prompt_registry.py), and its execution logic lives in [`src/agents/planner.py`](/Users/scarlettv/Documents/AI-Experiement/src/agents/planner.py).
 
 It outputs:
 
@@ -100,7 +100,7 @@ The Critic agent reviews the planner output instead of the raw user input alone.
 - `issues`
 - `recommended_revisions`
 
-Its logic lives in [`src/agents/critic.py`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/src/agents/critic.py).
+Its logic lives in [`src/agents/critic.py`](/Users/scarlettv/Documents/AI-Experiement/src/agents/critic.py).
 
 ### Why this workflow is credible
 
@@ -108,7 +108,7 @@ This is not a single prompt wrapped in an API. The system separates generation f
 
 ## Evaluation Approach
 
-The evaluation layer lives in [`src/evaluation/metrics.py`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/src/evaluation/metrics.py) and [`src/evaluation/evaluator.py`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/src/evaluation/evaluator.py).
+The evaluation layer lives in [`src/evaluation/metrics.py`](/Users/scarlettv/Documents/AI-Experiement/src/evaluation/metrics.py) and [`src/evaluation/evaluator.py`](/Users/scarlettv/Documents/AI-Experiement/src/evaluation/evaluator.py).
 
 Each response includes:
 
@@ -189,23 +189,23 @@ This endpoint lets a user or UI submit an edited `strategy_output` document and 
 
 ## Example Inputs And Outputs
 
-Four realistic examples live in [`docs/EXAMPLES.md`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/docs/EXAMPLES.md).
+Four realistic examples live in [`docs/EXAMPLES.md`](/Users/scarlettv/Documents/AI-Experiement/docs/EXAMPLES.md).
 
 Checked-in full reference cases are also available in:
 
-- [`examples/reference_agency_meeting_assistant.json`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/examples/reference_agency_meeting_assistant.json)
-- [`examples/reference_local_repair_marketplace.json`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/examples/reference_local_repair_marketplace.json)
-- [`examples/reference_clinic_compliance_assistant.json`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/examples/reference_clinic_compliance_assistant.json)
-- [`examples/reference_meal_planning_subscription.json`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/examples/reference_meal_planning_subscription.json)
+- [`examples/reference_agency_meeting_assistant.json`](/Users/scarlettv/Documents/AI-Experiement/examples/reference_agency_meeting_assistant.json)
+- [`examples/reference_local_repair_marketplace.json`](/Users/scarlettv/Documents/AI-Experiement/examples/reference_local_repair_marketplace.json)
+- [`examples/reference_clinic_compliance_assistant.json`](/Users/scarlettv/Documents/AI-Experiement/examples/reference_clinic_compliance_assistant.json)
+- [`examples/reference_meal_planning_subscription.json`](/Users/scarlettv/Documents/AI-Experiement/examples/reference_meal_planning_subscription.json)
 
 These checked-in example files are illustrative mock-mode reference outputs included so the repository is reviewable on GitHub without setup.
 
-The benchmark suite also includes 10 sample prompts in [`scripts/example_inputs.json`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/scripts/example_inputs.json).
+The benchmark suite also includes 10 sample prompts in [`scripts/example_inputs.json`](/Users/scarlettv/Documents/AI-Experiement/scripts/example_inputs.json).
 
 ## Project Structure
 
 ```text
-product-strategy-copilot/
+repo-root/
 ├── src/
 │   ├── agents/
 │   ├── api/
@@ -270,8 +270,8 @@ This writes:
 
 Checked-in reference artifacts for portfolio review live in:
 
-- [`artifacts/reference_benchmark_results.csv`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/artifacts/reference_benchmark_results.csv)
-- [`artifacts/reference_benchmark_summary.md`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/artifacts/reference_benchmark_summary.md)
+- [`artifacts/reference_benchmark_results.csv`](/Users/scarlettv/Documents/AI-Experiement/artifacts/reference_benchmark_results.csv)
+- [`artifacts/reference_benchmark_summary.md`](/Users/scarlettv/Documents/AI-Experiement/artifacts/reference_benchmark_summary.md)
 
 These reference artifacts are synthetic mock-mode outputs and should not be presented as live hosted-model measurements.
 
@@ -292,19 +292,19 @@ make docker-run
 
 ### Render
 
-Use [`render.yaml`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/render.yaml) as a blueprint or deploy the Dockerfile directly.
+Use [`render.yaml`](/Users/scarlettv/Documents/AI-Experiement/render.yaml) as a blueprint or deploy the Dockerfile directly.
 
 ### Railway
 
-Railway can use the included Dockerfile directly. A small starter config is included in [`railway.toml`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/railway.toml).
+Railway can use the included Dockerfile directly. A small starter config is included in [`railway.toml`](/Users/scarlettv/Documents/AI-Experiement/railway.toml).
 
 ### Fly.io
 
-[`fly.toml`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/fly.toml) provides a minimal app definition for container deployment.
+[`fly.toml`](/Users/scarlettv/Documents/AI-Experiement/fly.toml) provides a minimal app definition for container deployment.
 
 ## Environment Variables
 
-See [`.env.example`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/.env.example) for the full list. Key variables:
+See [`.env.example`](/Users/scarlettv/Documents/AI-Experiement/.env.example) for the full list. Key variables:
 
 - `LLM_PROVIDER`
 - `OPENAI_API_KEY`
@@ -334,26 +334,26 @@ See [`.env.example`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-
 
 ### Agent building
 
-- [`src/agents/planner.py`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/src/agents/planner.py) and [`src/agents/critic.py`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/src/agents/critic.py) show a multi-agent workflow with typed handoff.
-- [`src/core/prompt_registry.py`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/src/core/prompt_registry.py) shows prompt versioning and structured prompt contracts.
-- [`src/core/llm_client.py`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/src/core/llm_client.py) shows model abstraction across hosted, local, and deterministic test adapters.
-- [`tests/test_llm_client.py`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/tests/test_llm_client.py) shows retry behavior and provider selection under test.
+- [`src/agents/planner.py`](/Users/scarlettv/Documents/AI-Experiement/src/agents/planner.py) and [`src/agents/critic.py`](/Users/scarlettv/Documents/AI-Experiement/src/agents/critic.py) show a multi-agent workflow with typed handoff.
+- [`src/core/prompt_registry.py`](/Users/scarlettv/Documents/AI-Experiement/src/core/prompt_registry.py) shows prompt versioning and structured prompt contracts.
+- [`src/core/llm_client.py`](/Users/scarlettv/Documents/AI-Experiement/src/core/llm_client.py) shows model abstraction across hosted, local, and deterministic test adapters.
+- [`tests/test_llm_client.py`](/Users/scarlettv/Documents/AI-Experiement/tests/test_llm_client.py) shows retry behavior and provider selection under test.
 
 ### Backend engineering
 
-- [`src/api/routes.py`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/src/api/routes.py) exposes a typed REST API with generation and review paths.
-- [`src/services/copilot_service.py`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/src/services/copilot_service.py) separates orchestration from HTTP concerns.
-- [`src/models.py`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/src/models.py) defines the schema contract cleanly.
-- [`src/logging_config.py`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/src/logging_config.py) and Tenacity retries in [`src/core/llm_client.py`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/src/core/llm_client.py) show operational awareness.
+- [`src/api/routes.py`](/Users/scarlettv/Documents/AI-Experiement/src/api/routes.py) exposes a typed REST API with generation and review paths.
+- [`src/services/copilot_service.py`](/Users/scarlettv/Documents/AI-Experiement/src/services/copilot_service.py) separates orchestration from HTTP concerns.
+- [`src/models.py`](/Users/scarlettv/Documents/AI-Experiement/src/models.py) defines the schema contract cleanly.
+- [`src/logging_config.py`](/Users/scarlettv/Documents/AI-Experiement/src/logging_config.py) and Tenacity retries in [`src/core/llm_client.py`](/Users/scarlettv/Documents/AI-Experiement/src/core/llm_client.py) show operational awareness.
 
 ### Deployment awareness
 
-- [`Dockerfile`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/Dockerfile), [`render.yaml`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/render.yaml), and [`fly.toml`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/fly.toml) provide a credible deployment structure.
+- [`Dockerfile`](/Users/scarlettv/Documents/AI-Experiement/Dockerfile), [`render.yaml`](/Users/scarlettv/Documents/AI-Experiement/render.yaml), and [`fly.toml`](/Users/scarlettv/Documents/AI-Experiement/fly.toml) provide a credible deployment structure.
 - `.env`-driven configuration keeps the app portable across local, container, and PaaS environments.
 - The default runtime path is zero-cost, which makes the project easy to demo publicly without hiding the paid dependency behind setup steps.
 
 ### Evaluation and optimization thinking
 
-- [`src/evaluation/metrics.py`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/src/evaluation/metrics.py) defines measurable quality checks.
-- [`scripts/benchmark.py`](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/scripts/benchmark.py) runs 10 benchmark prompts in mock, local, or hosted modes and writes reproducible summaries.
+- [`src/evaluation/metrics.py`](/Users/scarlettv/Documents/AI-Experiement/src/evaluation/metrics.py) defines measurable quality checks.
+- [`scripts/benchmark.py`](/Users/scarlettv/Documents/AI-Experiement/scripts/benchmark.py) runs 10 benchmark prompts in mock, local, or hosted modes and writes reproducible summaries.
 - Per-agent usage, retries, latency, and cost estimates are surfaced directly in API responses for inspection.

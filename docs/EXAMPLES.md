@@ -4,10 +4,10 @@ These examples are written to look like realistic API exchanges for a public por
 
 Full checked-in reference cases are available in:
 
-- [examples/reference_agency_meeting_assistant.json](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/examples/reference_agency_meeting_assistant.json)
-- [examples/reference_local_repair_marketplace.json](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/examples/reference_local_repair_marketplace.json)
-- [examples/reference_clinic_compliance_assistant.json](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/examples/reference_clinic_compliance_assistant.json)
-- [examples/reference_meal_planning_subscription.json](/Users/scarlettv/Documents/AI-Experiement/product-strategy-copilot/examples/reference_meal_planning_subscription.json)
+- [examples/reference_agency_meeting_assistant.json](/Users/scarlettv/Documents/AI-Experiement/examples/reference_agency_meeting_assistant.json)
+- [examples/reference_local_repair_marketplace.json](/Users/scarlettv/Documents/AI-Experiement/examples/reference_local_repair_marketplace.json)
+- [examples/reference_clinic_compliance_assistant.json](/Users/scarlettv/Documents/AI-Experiement/examples/reference_clinic_compliance_assistant.json)
+- [examples/reference_meal_planning_subscription.json](/Users/scarlettv/Documents/AI-Experiement/examples/reference_meal_planning_subscription.json)
 
 ## Example 1: Agency Meeting Assistant
 
