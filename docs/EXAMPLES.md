@@ -1,8 +1,8 @@
 # Example Inputs And Outputs
 
-These examples are written to look like realistic API exchanges for a public portfolio. They mirror the response shape of the service and show the agent/evaluation metadata that makes the backend engineering visible.
+These examples show representative API exchanges. They mirror the response shape of the service and include the agent and evaluation metadata returned by the API.
 
-Full checked-in reference cases are available in:
+Full checked-in examples are available in:
 
 - [examples/reference_agency_meeting_assistant.json](/Users/scarlettv/Documents/AI-Experiement/examples/reference_agency_meeting_assistant.json)
 - [examples/reference_local_repair_marketplace.json](/Users/scarlettv/Documents/AI-Experiement/examples/reference_local_repair_marketplace.json)

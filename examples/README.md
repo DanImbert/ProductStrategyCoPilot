@@ -1,6 +1,6 @@
-# Reference Cases
+# Sample Cases
 
-These files are checked-in reference examples for portfolio review.
+These files are checked-in sample examples.
 
 - They mirror the API schema of the current service.
 - They are written to reflect the zero-cost `mock` mode path.

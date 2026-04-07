@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Multi-agent FastAPI service for structured product strategy generation and critique"
 readme = "README.md"
 requires-python = ">=3.10"
-authors = [{name = "Portfolio", email = "ai@example.com"}]
+authors = [{name = "Product Strategy Copilot", email = "ai@example.com"}]
 license = {text = "MIT"}
 
 dependencies = [

@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11"]
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-dev.txt
+
+      - name: Lint
+        run: python -m ruff check src tests
+
+      - name: Type-check
+        run: python -m mypy src
+
+      - name: Test
+        run: python -m pytest -q
+
+      - name: Prompt regression
+        run: python -m scripts.prompt_regression --provider mock
+
+      - name: Upload regression artifacts
+        if: always() && matrix.python-version == '3.11'
+        uses: actions/upload-artifact@v4
+        with:
+          name: regression-artifacts-py311
+          path: |
+            artifacts/prompt_regression_results.json
+            artifacts/prompt_regression_summary.md

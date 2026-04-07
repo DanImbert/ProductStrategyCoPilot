@@ -1,0 +1,62 @@
+[
+  {
+    "case_id": "agency_meeting_assistant",
+    "concept": "An AI assistant for boutique agencies that turns messy meeting notes into client-ready summaries, follow-up emails, and internal task plans.",
+    "additional_context": "Optimize for time-to-value within one session.",
+    "expected_product_name": "SignalBrief",
+    "expected_category": "AI assistant",
+    "required_risk_categories": ["delivery", "go_to_market"],
+    "min_quality_score": 0.9,
+    "min_completeness_score": 0.95,
+    "min_consistency_score": 0.9,
+    "min_task_count": 6,
+    "min_question_count": 4,
+    "require_ready_for_delivery": true,
+    "require_safety_notes": false
+  },
+  {
+    "case_id": "local_repair_marketplace",
+    "concept": "A marketplace that helps homeowners compare vetted repair professionals, manage quotes, and convert decisions into booked jobs faster.",
+    "additional_context": "Launch in one city first and emphasize trust.",
+    "expected_product_name": "Fixlane",
+    "expected_category": "Marketplace",
+    "required_risk_categories": ["delivery", "go_to_market", "safety"],
+    "min_quality_score": 0.9,
+    "min_completeness_score": 0.95,
+    "min_consistency_score": 0.9,
+    "min_task_count": 6,
+    "min_question_count": 4,
+    "require_ready_for_delivery": true,
+    "require_safety_notes": true
+  },
+  {
+    "case_id": "clinic_compliance_assistant",
+    "concept": "A workflow assistant for small clinics that turns policy updates into staff action plans, documentation checklists, and audit reminders.",
+    "additional_context": "Compliance-heavy domain with human review.",
+    "expected_product_name": "TraceLedger",
+    "expected_category": "Workflow SaaS",
+    "required_risk_categories": ["delivery", "compliance"],
+    "min_quality_score": 0.9,
+    "min_completeness_score": 0.95,
+    "min_consistency_score": 0.9,
+    "min_task_count": 6,
+    "min_question_count": 4,
+    "require_ready_for_delivery": true,
+    "require_safety_notes": true
+  },
+  {
+    "case_id": "meal_planning_subscription",
+    "concept": "A mobile subscription app for busy parents that turns dietary goals, school schedules, and grocery budgets into flexible weekly meal plans.",
+    "additional_context": "Consumer subscription with strong repeat usage.",
+    "expected_product_name": "Weeknight Flow",
+    "expected_category": "Consumer subscription",
+    "required_risk_categories": ["delivery", "retention"],
+    "min_quality_score": 0.9,
+    "min_completeness_score": 0.95,
+    "min_consistency_score": 0.9,
+    "min_task_count": 6,
+    "min_question_count": 4,
+    "require_ready_for_delivery": true,
+    "require_safety_notes": false
+  }
+]

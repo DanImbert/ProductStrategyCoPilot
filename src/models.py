@@ -151,6 +151,8 @@ class CriticReview(BaseModel):
 class AgentRunMetrics(BaseModel):
     """Per-agent execution metadata for observability."""
 
+    model_config = ConfigDict(protected_namespaces=())
+
     agent_name: str
     agent_version: str
     prompt_name: str
@@ -211,6 +213,8 @@ class StrategyReviewResponse(BaseModel):
 
 class BenchmarkResult(BaseModel):
     """Single benchmark run entry used for scripts and reporting."""
+
+    model_config = ConfigDict(protected_namespaces=())
 
     case_id: str
     concept: str

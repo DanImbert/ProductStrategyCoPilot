@@ -7,7 +7,7 @@ import logging
 import re
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from typing import Any
+from typing import Any, cast
 
 import httpx
 from tenacity import AsyncRetrying, retry_if_exception_type, stop_after_attempt, wait_exponential
@@ -61,7 +61,10 @@ def extract_json_payload(text: str) -> dict[str, Any]:
         if object_match:
             candidate = object_match.group(1)
 
-    return json.loads(candidate)
+    payload = json.loads(candidate)
+    if not isinstance(payload, dict):
+        raise ValueError("Model response did not decode to a JSON object.")
+    return cast(dict[str, Any], payload)
 
 
 def informative_phrase(text: str, limit: int = 10) -> str:
@@ -165,7 +168,8 @@ def build_mock_strategy(concept: str, additional_context: str | None = None) -> 
 
     platform = infer_platform(concept)
     category = infer_category(concept)
-    product_name = infer_product_name(concept)
+    naming_context = concept if not additional_context else f"{concept} {additional_context}"
+    product_name = infer_product_name(naming_context)
     target_user = infer_target_user(concept)
     monetization_model = infer_monetization_model(concept)
     focus_phrase = informative_phrase(concept, limit=8)
@@ -413,7 +417,7 @@ def build_mock_review(concept: str, strategy_output: dict[str, Any]) -> dict[str
 
     lowered = concept.lower()
     safety_notes: list[str] = []
-    if any(keyword in lowered for keyword in ("health", "medical", "legal", "finance", "compliance")):
+    if any(keyword in lowered for keyword in ("health", "medical", "legal", "finance", "compliance", "clinic")):
         safety_notes.append("If this workflow influences regulated decisions, the product needs human review boundaries and stronger auditability.")
     if any(keyword in lowered for keyword in ("marketplace", "contractor", "repair")):
         safety_notes.append("Marketplace flows usually need dispute handling, trust signals, and provider quality controls.")
@@ -665,7 +669,7 @@ class LocalOpenAICompatibleAdapter(BaseLLMAdapter):
 
 
 class MockLLMAdapter(BaseLLMAdapter):
-    """Deterministic adapter used for tests, demos, and offline benchmarking."""
+    """Deterministic adapter used for tests, local development, and offline benchmarking."""
 
     provider_name = "mock"
 

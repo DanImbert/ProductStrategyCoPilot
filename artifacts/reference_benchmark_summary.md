@@ -1,6 +1,6 @@
 # Benchmark Summary
 
-This is a checked-in mock-mode reference artifact included for GitHub review convenience.
+This is a checked-in mock-mode sample artifact.
 
 - Cases: 10
 - Successful runs: 10

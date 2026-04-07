@@ -5,7 +5,7 @@ from __future__ import annotations
 from functools import lru_cache
 from typing import Literal
 
-from pydantic import Field
+from pydantic import Field, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -47,6 +47,32 @@ class Settings(BaseSettings):
     log_level: str = "INFO"
     enable_file_logging: bool = True
     log_file_path: str = "logs/product_strategy_copilot.log"
+
+    @field_validator("debug", mode="before")
+    @classmethod
+    def normalize_debug(cls, value: object) -> object:
+        """Tolerate common environment strings that imply non-debug mode."""
+
+        if isinstance(value, str):
+            lowered = value.strip().lower()
+            if lowered in {"release", "prod", "production"}:
+                return False
+            if lowered in {"dev", "development", "debug"}:
+                return True
+        return value
+
+    @property
+    def cors_origins(self) -> list[str]:
+        """Return normalized CORS origins from the environment string."""
+
+        origins = [origin.strip() for origin in self.cors_allow_origins.split(",") if origin.strip()]
+        return origins or ["*"]
+
+    @property
+    def cors_allow_credentials(self) -> bool:
+        """Disable credentialed wildcard CORS, which browsers reject."""
+
+        return "*" not in self.cors_origins
 
     @property
     def active_model_name(self) -> str:

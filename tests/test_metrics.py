@@ -99,6 +99,14 @@ def build_document() -> ProductStrategyDocument:
                 estimated_hours=20,
                 dependencies=[2],
             ),
+            BuildTaskItem(
+                id=4,
+                title="Pilot the workflow with a small agency design partner",
+                priority=Priority.MEDIUM,
+                rationale="Early structured feedback helps confirm whether the generated output is useful in live delivery work.",
+                estimated_hours=10,
+                dependencies=[3],
+            ),
         ],
         follow_up_questions=[
             FollowUpQuestion(
@@ -115,6 +123,11 @@ def build_document() -> ProductStrategyDocument:
                 question="Will teams expect task exports or collaboration before they will adopt the product?",
                 category=QuestionCategory.SCOPE,
                 reason="This affects the MVP boundary and retention plan.",
+            ),
+            FollowUpQuestion(
+                question="What client-facing risk would make teams hesitate to trust the generated output?",
+                category=QuestionCategory.DATA,
+                reason="This helps define review boundaries and the minimum acceptable output quality bar.",
             ),
         ],
     )

@@ -1,8 +1,8 @@
 # Product Strategy Copilot
 
-Product Strategy Copilot is a portfolio-focused FastAPI application that turns plain-English product ideas into structured strategy briefs, critiques them with a second agent, and reports measurable quality, latency, and estimated cost per request.
+Product Strategy Copilot is a FastAPI application that turns plain-English product ideas into structured strategy briefs, critiques them with a second agent, and reports measurable quality, latency, and estimated cost per request.
 
-It is intentionally scoped as a production-aware backend project rather than a feature-heavy app. The goal is to show credible AI engineering work: prompt orchestration, agent design, typed APIs, evaluation, logging, retries, and deployable packaging.
+It is intentionally scoped as a production-aware backend service rather than a feature-heavy app. The focus is on prompt orchestration, agent design, typed APIs, evaluation, logging, retries, and deployable packaging.
 
 The project is designed to run without paid APIs by default. `LLM_PROVIDER=mock` gives a deterministic zero-cost baseline, and `LLM_PROVIDER=local` supports free OpenAI-compatible local models such as Ollama or LM Studio.
 
@@ -102,9 +102,9 @@ The Critic agent reviews the planner output instead of the raw user input alone.
 
 Its logic lives in [`src/agents/critic.py`](/Users/scarlettv/Documents/AI-Experiement/src/agents/critic.py).
 
-### Why this workflow is credible
+### Why generation and critique are separated
 
-This is not a single prompt wrapped in an API. The system separates generation from critique, keeps prompt versions explicit, exposes agent run metadata, and supports both hosted and local model adapters. That gives the project a clearer AI engineering story than a one-shot completion endpoint.
+This is not a single prompt wrapped in an API. The system separates generation from critique, keeps prompt versions explicit, exposes agent run metadata, and supports both hosted and local model adapters.
 
 ## Evaluation Approach
 
@@ -128,7 +128,7 @@ Each response includes:
 
 ### Benchmark modes
 
-- `mock`: zero-cost synthetic baseline for reproducible demos and CI-friendly runs
+- `mock`: zero-cost synthetic baseline for tests, regression checks, and reproducible benchmarks
 - `local`: live benchmark against a free local OpenAI-compatible model
 - `openai`: optional hosted benchmark path if credentials are available
 
@@ -191,14 +191,14 @@ This endpoint lets a user or UI submit an edited `strategy_output` document and 
 
 Four realistic examples live in [`docs/EXAMPLES.md`](/Users/scarlettv/Documents/AI-Experiement/docs/EXAMPLES.md).
 
-Checked-in full reference cases are also available in:
+Checked-in sample cases are also available in:
 
 - [`examples/reference_agency_meeting_assistant.json`](/Users/scarlettv/Documents/AI-Experiement/examples/reference_agency_meeting_assistant.json)
 - [`examples/reference_local_repair_marketplace.json`](/Users/scarlettv/Documents/AI-Experiement/examples/reference_local_repair_marketplace.json)
 - [`examples/reference_clinic_compliance_assistant.json`](/Users/scarlettv/Documents/AI-Experiement/examples/reference_clinic_compliance_assistant.json)
 - [`examples/reference_meal_planning_subscription.json`](/Users/scarlettv/Documents/AI-Experiement/examples/reference_meal_planning_subscription.json)
 
-These checked-in example files are illustrative mock-mode reference outputs included so the repository is reviewable on GitHub without setup.
+These checked-in example files capture representative mock-mode outputs so the response shape and evaluation metadata are easy to inspect.
 
 The benchmark suite also includes 10 sample prompts in [`scripts/example_inputs.json`](/Users/scarlettv/Documents/AI-Experiement/scripts/example_inputs.json).
 
@@ -230,6 +230,8 @@ repo-root/
 ## Local Development
 
 ### 1. Install
+
+Use Python 3.10+ for this project. On macOS, the system `python3` is often 3.9, so create your virtualenv from a newer Homebrew or `pyenv` interpreter rather than the default one.
 
 ```bash
 make dev
@@ -268,18 +270,31 @@ This writes:
 - `artifacts/benchmark_results.csv`
 - `artifacts/benchmark_summary.md`
 
-Checked-in reference artifacts for portfolio review live in:
+Sample artifacts from a mock-mode run are included in:
 
 - [`artifacts/reference_benchmark_results.csv`](/Users/scarlettv/Documents/AI-Experiement/artifacts/reference_benchmark_results.csv)
 - [`artifacts/reference_benchmark_summary.md`](/Users/scarlettv/Documents/AI-Experiement/artifacts/reference_benchmark_summary.md)
 
-These reference artifacts are synthetic mock-mode outputs and should not be presented as live hosted-model measurements.
+These artifacts are synthetic mock-mode outputs and should not be presented as live hosted-model measurements.
 
 Run the same suite against a free local model:
 
 ```bash
 make benchmark-local
 ```
+
+### 6. Run the prompt regression suite
+
+```bash
+make regression
+```
+
+This writes:
+
+- `artifacts/prompt_regression_results.json`
+- `artifacts/prompt_regression_summary.md`
+
+The regression suite uses fixed high-signal scenarios in [`scripts/regression_cases.json`](/Users/scarlettv/Documents/AI-Experiement/scripts/regression_cases.json) and checks that outputs still meet minimum quality, structure, and safety expectations.
 
 ## Deployment Instructions
 
@@ -318,9 +333,9 @@ See [`.env.example`](/Users/scarlettv/Documents/AI-Experiement/.env.example) for
 ## Known Limitations
 
 - The evaluation metrics are heuristic, not human-judged ground truth.
-- The mock adapter is intentionally deterministic for testing and zero-cost portfolio demos, but it is not a substitute for live model evaluation.
+- The mock adapter is intentionally deterministic for testing and offline development, but it is not a substitute for live model evaluation.
 - Cost estimation depends on configured token pricing and may drift from vendor pricing if not updated.
-- The project is production-aware, not production-ready. It does not include auth, persistent storage, rate limiting, tracing, or formal prompt regression datasets.
+- The project is production-aware, not production-ready. It does not include auth, persistent storage, rate limiting, tracing, or human-reviewed evaluation datasets.
 
 ## Next Improvements
 
@@ -330,7 +345,7 @@ See [`.env.example`](/Users/scarlettv/Documents/AI-Experiement/.env.example) for
 - add authentication, rate limiting, and tenant isolation
 - add lightweight frontend editing UI on top of the review endpoint
 
-## Exactly What Demonstrates AI Engineering Skill
+## Implementation Notes
 
 ### Agent building
 
@@ -350,10 +365,12 @@ See [`.env.example`](/Users/scarlettv/Documents/AI-Experiement/.env.example) for
 
 - [`Dockerfile`](/Users/scarlettv/Documents/AI-Experiement/Dockerfile), [`render.yaml`](/Users/scarlettv/Documents/AI-Experiement/render.yaml), and [`fly.toml`](/Users/scarlettv/Documents/AI-Experiement/fly.toml) provide a credible deployment structure.
 - `.env`-driven configuration keeps the app portable across local, container, and PaaS environments.
-- The default runtime path is zero-cost, which makes the project easy to demo publicly without hiding the paid dependency behind setup steps.
+- The default runtime path is zero-cost, which keeps local development and CI inexpensive.
 
 ### Evaluation and optimization thinking
 
 - [`src/evaluation/metrics.py`](/Users/scarlettv/Documents/AI-Experiement/src/evaluation/metrics.py) defines measurable quality checks.
 - [`scripts/benchmark.py`](/Users/scarlettv/Documents/AI-Experiement/scripts/benchmark.py) runs 10 benchmark prompts in mock, local, or hosted modes and writes reproducible summaries.
+- [`scripts/prompt_regression.py`](/Users/scarlettv/Documents/AI-Experiement/scripts/prompt_regression.py) runs fixed regression cases with explicit pass/fail expectations so prompt or schema drift can be caught automatically.
+- [`.github/workflows/ci.yml`](/Users/scarlettv/Documents/AI-Experiement/.github/workflows/ci.yml) runs linting, type-checking, tests, and prompt regression automatically across supported Python versions.
 - Per-agent usage, retries, latency, and cost estimates are surfaced directly in API responses for inspection.

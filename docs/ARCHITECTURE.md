@@ -32,6 +32,6 @@ flowchart TD
 
 ## Zero-Cost Modes
 
-- `mock`: deterministic offline baseline used by default for tests, demos, and benchmark reproducibility
+- `mock`: deterministic offline baseline used by default for tests, regression checks, and benchmark reproducibility
 - `local`: free OpenAI-compatible local model endpoint such as Ollama or LM Studio
 - `openai`: optional hosted provider path kept behind environment configuration

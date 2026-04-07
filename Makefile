@@ -1,4 +1,4 @@
-.PHONY: help install dev run test lint format clean benchmark benchmark-local docker-build docker-run
+.PHONY: help check-python install dev run test lint format clean benchmark benchmark-local regression docker-build docker-run
 
 PYTHON ?= python3
 PIP := $(PYTHON) -m pip
@@ -13,35 +13,42 @@ help:
 	@echo "  make format        - Format code"
 	@echo "  make benchmark     - Run the 10-case benchmark in zero-cost mock mode"
 	@echo "  make benchmark-local - Run the benchmark against a free local OpenAI-compatible model"
+	@echo "  make regression   - Run the fixed prompt regression suite"
 	@echo "  make docker-build  - Build Docker image"
 	@echo "  make docker-run    - Run Docker container"
 
-install:
+check-python:
+	@$(PYTHON) -c "import sys; raise SystemExit('Python 3.10+ is required for this project.') if sys.version_info < (3, 10) else None"
+
+install: check-python
 	$(PIP) install --upgrade pip setuptools wheel
 	$(PIP) install -r requirements.txt
 
-dev:
+dev: check-python
 	$(PIP) install --upgrade pip setuptools wheel
-	$(PIP) install -r requirements.txt -r requirements-dev.txt
+	$(PIP) install -r requirements-dev.txt
 
-run:
+run: check-python
 	$(PYTHON) -m uvicorn src.api.main:app --reload --host 0.0.0.0 --port 8000
 
-test:
+test: check-python
 	$(PYTHON) -m pytest tests/ -v --cov=src --cov-report=term-missing
 
-lint:
+lint: check-python
 	$(PYTHON) -m ruff check src/ tests/
 	$(PYTHON) -m mypy src/
 
-format:
+format: check-python
 	$(PYTHON) -m black src/ tests/ scripts/
 
-benchmark:
-	$(PYTHON) scripts/benchmark.py --provider mock
+benchmark: check-python
+	$(PYTHON) -m scripts.benchmark --provider mock
 
-benchmark-local:
-	$(PYTHON) scripts/benchmark.py --provider local
+benchmark-local: check-python
+	$(PYTHON) -m scripts.benchmark --provider local
+
+regression: check-python
+	$(PYTHON) -m scripts.prompt_regression --provider mock
 
 clean:
 	find . -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
